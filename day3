@@ -78,6 +78,34 @@ x+y   、 x*n（复读n次）、 x in y（判断是否是子串？），x[i]索�
 len(x)
 str(x)将某类型的x转化为其对应的字符串格式
 chr(x-uni-code)将unicode x编码转化为其对应的字符，比如chr（10004）is √
-ord（x）返回其unicode编码
+ord（"x"）返回其unicode编码
 hex oct转化为16、8进制小写形式，如255转化为0xff，0o377，
-#先stop in here（Oh，sir，don stop）
+eg:Kaisa encode
+mingwen=input(""input mingwen in here ples:)
+for p in mingwen:
+    if ord("a") <= ord(p) <= ord("z"):
+        print(chr(ord("a")+(ord(p)-ord("a")+3)%26,end='')
+    else:
+        print(p,end='')
+
+对于一个字符串str，内置的字符串处理方法有
+str.lower,str.upper,str.islower,str.isnumeric,str.isprintable....
+
+format方法填充，也有格式
+比如s=string "{0:>30}".format,{0:-^30}(juzhong,*tianchong)
+"{0:-^20,}".format(121424314134),{:.2f},{:.4}.format("string"),{0:H^20.3f(1241241.12414)}
+数字输出格式："{0:b},{0:c},{0:x},{0:X},{0:o}"
+eg:进度条模拟
+import time
+scale=10
+print("start in here")
+for i in range(scale+1):
+    a,b='**'*i ,'--'*(scale-i)
+    c=(i/scale)*100
+    print("%{:^3.0f}[{}->{}]".format(c,a,b))
+    time.sleep(0.1)
+print("We r done")
+单行刷新也可以办到，只是也需要改一下内部文件
+另外除了format方法，还有：
+center()方法，语法是：
+str.center(width[, fillchar])，eg：str.center(20, '*')，直接居中了
