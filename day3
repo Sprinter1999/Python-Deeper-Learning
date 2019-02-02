@@ -1,0 +1,83 @@
+day3实践少一点，所以就不开ide了
+
+首先再看了一下三大数字类型：
+1.整数，理论取值是无穷，但是实际范围取决于本地计算机内存
+2.浮点数，可以用十进制法，也可以用科学记数法，用c一样，浮点数运算结果可以有17位，但只能保证15位的准确性；如果对准确度要求较高，
+可以使用python的标准库decimal，用的时候就直接import decimal，a=decimal.Decimal('1.2345678')，格式是Decimal（‘****’）
+3.复数类型：z是一个复数，比如12.3+4j，虚数部分是以Jorj结尾标志；若给定一个复数z，可以用z.real和z.imag获取其实数or虚数部分
+比如1.23e-4+121e+10j.real=0.000123。
+
+***********************************************************************************************
+第二是基本数值运算操作符号：
++ - * / //（py3的整数除法） % -x +x x**y（表示x^y）
+操作符运算后可能改变数字类型，一般整数----》浮点-----》复数，范围越来越广
+eg.print (8//3**2*10)
+    print (2**2**3)
+***********************************************************************************************
+第三是内置的基本数值运算函数
+abs(),divmod(x,y)输出（x//y，x%y）整数运算二元组，pow（a，b），round（x，[,ndigits]）四舍五入保留ndigits位小数，max（x1，x2...）,min(x1,x2...)
+eg:求3^(3^999)的末尾4位数
+    pow(3,pow(3,999),10000)
+***********************************************************************************************    
+第四是math库
+from math import *
+math库东西比较多，比如floor，ceil（注意和C不同，这里返回的是整数，C返回的是double类型）.
+数值：
+pi，e，inf，fabs，nan
+数值表示函数：
+fmod，fsum（[a,b,c,d]）浮点数精确求和
+，factorial（x），gcd(a,b),frexp(x)将x拆分成m*2^e这种形式，idexp（x，i）returns x*2^i，modf(x)返回小数和整数部分，trunc整数截断，copysign(x,y)
+用y的符号代替x的符号，isclose（x,y）,isfinite(x),isinf(x),isnan(x),其中用得最多的是fsun（[a,b,c,d,e,f,g...]）
+幂对数函数：
+pow，exp，sqrt，log（x，base），log2，log10（）,etc
+eg:
+import math   # 导入 math 模块
+print "math.log(100.12) : ", math.log(100.12)
+print "math.log(100.72) : ", math.log(100.72)
+print "math.log(119L) : ", math.log(119L)
+print "math.log(math.pi) : ", math.log(math.pi)
+# 设置底数
+print "math.log(10,2) : ", math.log(10,2)
+三角运算
+sin，degree，radians，hypot(x,y)求解原点距....
+高等特殊函数：
+erf（x)  0~x上e^-t^2的积分
+erfc(x)  对上式去补，x~inf
+gamma(x)  伽马函数，x^(t-1) *e^(-x)...
+**************************************************************************************
+代码段：
+小Q周末放假忘记知识，平时用功学习增长知识，看看它一年增长多少知识？
+power,learning_rate=1,0.01
+for i in range(365):
+    if i%7 in [6,0]:
+        power=power*(1-learning_rate)
+    else:
+        power=power*(1+learning_rate)
+print("After 365 days you got {:.2f} powers！".format(power))
+小Q已经算出了每天都努力得到37.78的知识值，但他仍然想要周末休息，请问平时应该多么用功增长知识？
+def dayup(learning_rate):
+    power,learning_rate=1,0.01
+    for i in range(365):
+       if i%7 in [6,0]:
+           power=power*(1-learning_rate)
+       else:
+            power=power*(1+learning_rate)
+    return power
+    
+ increase=0.01;
+ while(dayup(increase)<=37.78):
+      increase+=0.01;
+ print("他应该每天多吸收这么多知识{:.2f}".format(increase))
+ ****************************************************************************************************
+ 第五是字符串类型：
+1. input()将stdin返回一个字符串，比如name=input("Input your name in here ples")
+ 假如我们输入python，可以试着输出name[0],name[2:-1],name[::-1],name[2:]
+2.python提供了很方便的字符串操作符号，假设x、y是字符串，n is an int，那么有：
+x+y   、 x*n（复读n次）、 x in y（判断是否是子串？），x[i]索引随机访问，x[m:n]切片
+3.内置的字符串处理函数
+len(x)
+str(x)将某类型的x转化为其对应的字符串格式
+chr(x-uni-code)将unicode x编码转化为其对应的字符，比如chr（10004）is √
+ord（x）返回其unicode编码
+hex oct转化为16、8进制小写形式，如255转化为0xff，0o377，
+#先stop in here（Oh，sir，don stop）
