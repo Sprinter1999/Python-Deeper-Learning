@@ -8,3 +8,42 @@ class Solution:
 当你用实例调用方法的时候，由解释器自动的把实例对象本身悄悄的传递给方法，不需要你自己传递self进来。
 例如有一个带有两个参数的方法，你所有调用只需要传递进来二个参数。
 **********************************************************
+Python3的集合方法：
+集合（set）是一个无序的不重复元素序列。
+可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+代码示例：
+>>>basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+>>> print(basket)                      # 这里演示的是去重功能
+{'orange', 'banana', 'pear', 'apple'}
+>>> 'orange' in basket                 # 快速判断元素是否在集合内
+True
+>>> 'crabgrass' in basket
+False
+>>> # 下面展示两个集合间的运算.
+...
+>>> a = set('abracadabra')
+>>> b = set('alacazam')
+>>> a                                  
+{'a', 'r', 'b', 'c', 'd'}
+>>> a - b                              # 集合a中包含而集合b中不包含的元素
+{'r', 'd', 'b'}
+>>> a | b                              # 集合a或b中包含的所有元素
+{'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
+>>> a & b                              # 集合a和b中都包含了的元素
+{'a', 'c'}
+>>> a ^ b                              # 不同时包含于a和b的元素
+{'r', 'd', 'b', 'm', 'z', 'l'}
+Oj示例：
+在一串数字里面，仅有两个数字出现了奇数次，其余都是偶数次，请设计算法找出来：
+class Solution:
+    # 返回[a,b] 其中ab是出现一次的两个数字
+    def FindNumsAppearOnce(self, array):
+        # write code here
+        tmp = set()
+        for a in array:
+            if a in tmp:
+                tmp.remove(a)
+            else:
+                tmp.add(a)
+        return list(tmp)
+***********************************************
