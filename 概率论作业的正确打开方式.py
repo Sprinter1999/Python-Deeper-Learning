@@ -1,10 +1,10 @@
 from math import sqrt
 def getNum():       #获取用户不定长输入
     nums = []
-    iNumStr = input("请输入数字(直接输入回车退出): ")
+    iNumStr = input("请输入单个数字(直接输入回车退出): ")
     while iNumStr != "":
         nums.append(eval(iNumStr))
-        iNumStr = input("请输入数字(直接输入回车退出): ")
+        iNumStr = input("请输入单个数字(直接输入回车退出): ")
     return nums
 
 def mean(numbers):  #计算平均值
