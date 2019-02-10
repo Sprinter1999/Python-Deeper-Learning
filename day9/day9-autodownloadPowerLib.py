@@ -5,7 +5,7 @@ Created on Sun Feb 10 14:16:12 2019
 @author: 21543
 """
 
-#e16.1BatchInstall.py
+#This script can take over Console-table and you can download some powerful libs according to ur needs automatically.
 import os
 libs = {"numpy","matplotlib","pillow","sklearn","requests",\
         "jieba","beautifulsoup4","wheel","networkx","sympy",\
