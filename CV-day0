@@ -1,0 +1,27 @@
+Today is for basic environment setting and modification.
+Summary:
+1.
+Working locally
+Installing Anaconda: If you decide to work locally, we recommend using the free Anaconda Python distribution（发行版）,
+which provides an easy way for you to handle package dependencies. Please be sure to download the Python 3 version, 
+which currently installs Python 3.6. 
+
+Anaconda Virtual environment: Once you have Anaconda installed, it makes sense to create a virtual environment for the course.
+To set up a virtual environment, run (in a terminal)
+
+                conda create -n cs231n python=3.6 anaconda
+
+to create an environment called cs231n.
+
+Then, to activate and enter the environment, run
+
+                source activate cs231n
+
+To exit, you can simply close the window, or run
+
+              source deactivate cs231n
+**************************(important)
+Note that every time you want to work on the assignment, you should run source activate cs231n (change to the name of your virtual env).
+*****************************
+
+2.Get used to Numpy Scipy and Matplotlib （later update）
