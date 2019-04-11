@@ -1,15 +1,7 @@
-
-'''
-    @帮电子院小姐姐写的一个电子钢琴实验
-    @Scripted by Xuefen
-'''import winsound
+import winsound
 import time
 import os
 import re
-
-'''
-
-'''
 
 def function(instruction):
 
@@ -105,33 +97,40 @@ def function(instruction):
             #print(tune)
 
             while(True):
-                if((tune=='a'or'A')==True):
+                if ((tune=='a')==True)or((tune=='A')==True):
                     winsound.Beep(131*highness,ConvertTempo)#注意到其实这张音调表是有大概的1：2：4：8的关系的
                     #print(131*highness)
                     break
-                if (tune=='b'or'B')==True:
+                elif ((tune=='b')==True)or((tune=='B')==True):
                     winsound.Beep(147*highness,ConvertTempo)#第一个参数表示频率，第二个参数表示持续节拍
                     #print(146*highness)
                     break
-                if(tune=='c'or'C')==True:
+                
+                elif((tune=='c')==True)or((tune=='C')==True):
                     winsound.Beep(165*highness,ConvertTempo)#这个系统函数只能接收整数参数，所以应该提前*1000
                     #print(165*highness)
                     break
-                if(tune=='d'or'D')==True:
+                
+                elif((tune=='d')==True)or((tune=='D')==True):
                     winsound.Beep(175*highness,ConvertTempo)
                     #print(175*highness)
                     break
-                if(tune=='e'or'E')==True:
+               
+                elif((tune=='e')==True)or((tune=='E'==True)):
                     winsound.Beep(196*highness,ConvertTempo)
                     break
-                if(tune=='f'or'F')==True:
+                
+                elif((tune=='f')==True)or((tune=='F'==True)):
                     winsound.Beep(220*highness,ConvertTempo)
                     break
-                if(tune=='G'or'g')==True:
+                
+                elif((tune=='g')==True)or((tune=='G'==True)):
                     winsound.Beep(247*highness,ConvertTempo)
                     break
+               
                 else:
                     break
+            print(tune)
            
 
 
@@ -140,8 +139,6 @@ while(1):
     if(instruction=='0'):
         exit()
     function(instruction)   
-
-
 
 
 
