@@ -1,11 +1,14 @@
-import winsound
+
+'''
+    @帮电子院小姐姐写的一个电子钢琴实验
+    @Scripted by Xuefen
+'''import winsound
 import time
 import os
 import re
 
 '''
-    @帮电子院小姐姐写的一个电子钢琴实验
-    @Scripted by Xuefen
+
 '''
 
 def function(instruction):
@@ -99,25 +102,37 @@ def function(instruction):
             
             ConvertTempo=int(tempo*1000)#1000表示计算机内部一个时间参数指标，用C语言就是CLOCK_PER_SEC
             #print(ConvertTempo)
+            #print(tune)
 
-            if (tune=='a' or 'A'):
-                winsound.Beep(131*highness,ConvertTempo)#注意到其实这张音调表是有大概的1：2：4：8的关系的
-            elif(tune=='b'or'B'):
-                winsound.Beep(147*highness,ConvertTempo)#第一个参数表示频率，第二个参数表示持续节拍
-            elif(tune=='c'or'C'):
-                winsound.Beep(165*highness,ConvertTempo)#这个系统函数只能接收整数参数，所以应该提前*1000
-            elif(tune=='d'or'D'):
-                winsound.Beep(175*highness,ConvertTempo)
-            elif(tune=='e'or'E'):
-                winsound.Beep(196*highness,ConvertTempo)
-            elif(tune=='f'or'F'):
-                winsound.Beep(220*highness,ConvertTempo)
-            elif(tune=='G'or'g'):
-                winsound.Beep(247*highness,ConvertTempo)
-
-            
-
-
+            while(True):
+                if((tune=='a'or'A')==True):
+                    winsound.Beep(131*highness,ConvertTempo)#注意到其实这张音调表是有大概的1：2：4：8的关系的
+                    #print(131*highness)
+                    break
+                if (tune=='b'or'B')==True:
+                    winsound.Beep(147*highness,ConvertTempo)#第一个参数表示频率，第二个参数表示持续节拍
+                    #print(146*highness)
+                    break
+                if(tune=='c'or'C')==True:
+                    winsound.Beep(165*highness,ConvertTempo)#这个系统函数只能接收整数参数，所以应该提前*1000
+                    #print(165*highness)
+                    break
+                if(tune=='d'or'D')==True:
+                    winsound.Beep(175*highness,ConvertTempo)
+                    #print(175*highness)
+                    break
+                if(tune=='e'or'E')==True:
+                    winsound.Beep(196*highness,ConvertTempo)
+                    break
+                if(tune=='f'or'F')==True:
+                    winsound.Beep(220*highness,ConvertTempo)
+                    break
+                if(tune=='G'or'g')==True:
+                    winsound.Beep(247*highness,ConvertTempo)
+                    break
+                else:
+                    break
+           
 
 
 while(1):
@@ -125,6 +140,8 @@ while(1):
     if(instruction=='0'):
         exit()
     function(instruction)   
+
+
 
 
 
