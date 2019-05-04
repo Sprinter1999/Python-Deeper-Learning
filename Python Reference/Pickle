@@ -1,0 +1,59 @@
+pickle模块用于将列表、元组、字典等对象存储到文件中，以及从文件中读取这些对象。
+
+示例代码：
+import pickle #导入pickle模块
+my_list = [123, 3.14, "王浩", ["another list"]] #创建一个列表
+pickle_file = open('my_list.pkl', 'wb') #创建一个pickle文件，文件后缀名随意,但是打开方式必须是wb（以二进制形式写入）
+pickle.dump(my_list, pickle_file) #将列表倒入文件
+pickle_file.close() #关闭pickle文件
+
+pickle_file = open('my_list.pkl', 'rb')
+my_list2 = pickle.load(pickle_file)
+print(my_list2)
+pickle_file.close()
+
+
+
+
+**************************************************************************************************************************
+在机器学习中，我们常常需要把训练好的模型存储起来，这样在进行决策时直接将模型读出，而不需要重新训练模型，
+这样就大大节约了时间。Python提供的pickle模块就很好地解决了这个问题，它可以序列化对象并保存到磁盘中，
+并在需要的时候读取出来，任何对象都可以执行序列化操作。
+
+Pickle模块中最常用的函数为：
+
+（1）pickle.dump(obj, file, [,protocol])
+
+        函数的功能：将obj对象序列化存入已经打开的file中。
+
+       参数讲解：
+
+obj：想要序列化的obj对象。
+file:文件名称。
+protocol：序列化使用的协议。如果该项省略，则默认为0。如果为负值或HIGHEST_PROTOCOL，则使用最高的协议版本。
+（2）pickle.load(file)
+
+        函数的功能：将file中的对象序列化读出。
+
+        参数讲解：
+
+file：文件名称。
+（3）pickle.dumps(obj[, protocol])
+
+       函数的功能：将obj对象序列化为string形式，而不是存入文件中。
+
+       参数讲解：
+
+obj：想要序列化的obj对象。
+protocal：如果该项省略，则默认为0。如果为负值或HIGHEST_PROTOCOL，则使用最高的协议版本。
+（4）pickle.loads(string)
+
+       函数的功能：从string中读出序列化前的obj对象。
+
+       参数讲解：
+
+string：文件名称。
+     【注】 dump() 与 load() 相比 dumps() 和 loads() 还有另一种能力：
+     dump()函数能一个接着一个地将几个对象序列化存储到同一个文件中，随后调用load()来以同样的顺序反序列化读出这些对象。
+
+
