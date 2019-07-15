@@ -1,4 +1,11 @@
 以前学得很不彻底，于是乎把以前的python库给删了，寒假再从头认真学习一遍      
+Go by tkinter:  一款围棋游戏  
+
+Nyquist Sampling： 奈奎斯特原理仿真  
+
+Python reference：一些参考资料  
+
+**Matyer2 Mega Python Challenge*：一个全方位难度较大的Python小项目集合*  
 
 day1： 入门级语言+turtle模块       
 
